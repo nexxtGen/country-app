@@ -26,6 +26,9 @@ const countriesReducer = function (state = initialState, action) {
                 const notDeletedCountries = state.countries.filter(country => country.id != action.id);
                 const notDeletedVisibleCountries = state.visibleCountries.filter(country => country.id != action.id);
                 return Object.assign({}, state, {countries: notDeletedCountries, visibleCountries: notDeletedVisibleCountries});
+             case SET_CONTINENT:
+                const continentCountries = state.countries.filter(country => country.continent === action.name);
+                return Object.assign({}, state, {visibleCountries: continentCountries});
     }
 
     return state;
