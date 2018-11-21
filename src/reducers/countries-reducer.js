@@ -1,11 +1,15 @@
 import { GET_COUNTRIES,
-    GET_COUNTRY
+    GET_COUNTRY,
+    SEARCH_COUNTRIES,
+    DELETE_COUNTRY,
+    SET_CONTINENT
  } from '../actions/actions-countries';
 import countriesData from '../data/countries.json';
 
 const initialState = {
     countries: countriesData,
-    selectedCountry: {}
+    selectedCountry: {},
+    visibleCountries: [] //stan zawierający wyszukane kraje
 };
 
 const countriesReducer = function (state = initialState, action) {
@@ -15,6 +19,9 @@ const countriesReducer = function (state = initialState, action) {
         case GET_COUNTRY:
             const selectedCountry= state.countries.find(country => country.id===parseInt(action.id));
             return Object.assign({}, state, {selectedCountry});
+            case SEARCH_COUNTRIES:
+                const foundCountries = state.countries.filter(country => country.name.toLowerCase().includes(action.searchText.toLowerCase()));
+                return Object.assign({}, state, {visibleCountries: foundCountries});
     }
 
     return state;
