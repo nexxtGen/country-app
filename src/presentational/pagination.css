@@ -1,10 +1,16 @@
 .listStyle {
-    margin-top: 3px;
-    font-Size: 16px;
+    margin-top: 4px;
+    font-Size: 15px;
     display: inline;
     margin-right: 5px;  
 }
-
+.listStyleActive {
+    margin-top: 0;
+    font-Size: 21px;
+    display: inline;
+    margin-right: 5px;  
+    color: blue;
+}
 .listStyle:hover {
     cursor: pointer;
 }

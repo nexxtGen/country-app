@@ -51,7 +51,8 @@ const countriesReducer = function (state = initialState, action) {
                 return Object.assign({}, state, {currentPage: prevPage });
             case SET_COUNTRIES_PER_PAGE:
                 const countriesPerPage = Number(action.countriesPerPage);
-                return Object.assign({}, state, { countriesPerPage});
+                return Object.assign({}, state, { countriesPerPage: countriesPerPage, currentPage: 1 });
+                
                 
                 
 

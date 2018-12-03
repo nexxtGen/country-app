@@ -58,13 +58,14 @@ class CountryFlagContainer extends Component {
             <div>
                 <h5>Countries list pages number: {pageNumbers.length}</h5>
                 <h5>All countries in App: {this.props.countries.length}</h5>
-                <h5>Select Page</h5>
+                <h5>CUrrent Page {this.props.currentPage}</h5>
                 <Pagination 
                     setCountriesPerPage={this.setCountriesPerPage.bind(this)}
                     pageNumbers={pageNumbers} 
                     handleClick={this.handleClickPage.bind(this)} 
                     handleNextPage={this.handleNextPage.bind(this)} 
                     handlePrevPage={this.handlePrevPage.bind(this)}
+                    currentPage={this.props.currentPage}
                 />
                 <div className="search text-center">
                     <input type="text" onChange={this.search.bind(this)}/>

@@ -53,7 +53,7 @@
     "populace": "38.53",
     "capital": "Warszawa",
     "continent": "Europa",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/1280px-Flag_of_Poland.svg.png",
+    "imageUrl": "http://flags.fmcdn.net/data/flags/w580/de.png",
     "id": 1
   }, {
     "name": "Irlandia 2",
@@ -61,7 +61,7 @@
     "populace": "4.59",
     "capital": "Dublin",
     "continent": "Europa",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Flag_of_Ireland.svg/1200px-Flag_of_Ireland.svg.png",
+    "imageUrl": "http://flags.fmcdn.net/data/flags/w580/at.png",
     "id": 2
   }, {
     "name": "Holandia 2",
@@ -69,7 +69,7 @@
     "populace": "16.8",
     "capital": "Amsterdam",
     "continent": "Europa",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/900px-Flag_of_the_Netherlands.svg.png",
+    "imageUrl": "http://flags.fmcdn.net/data/flags/w580/be.png",
     "id": 3
   }, {
     "name": "Maroko 2",
@@ -159,7 +159,7 @@
     "populace": "4.59",
     "capital": "Dublin",
     "continent": "Europa",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Flag_of_Ireland.svg/1200px-Flag_of_Ireland.svg.png",
+    "imageUrl": "http://flags.fmcdn.net/data/flags/w580/cz.png",
     "id": 2
   }, {
     "name": "Holandia 2",
@@ -175,7 +175,7 @@
     "populace": "33.01",
     "capital": "Rabat",
     "continent": "Afryka",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/900px-Flag_of_Morocco.svg.png",
+    "imageUrl": "http://flags.fmcdn.net/data/flags/w580/dk.png",
     "id": 4
   }, {
     "name": "Tunezja 2",

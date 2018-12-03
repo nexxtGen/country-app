@@ -71,7 +71,8 @@ export function handlePrevPage() {
 export function setCountriesPerPage(countriesPerPage) {
     return {
         type: SET_COUNTRIES_PER_PAGE,
-        countriesPerPage
+        countriesPerPage,
+        
 
     }
 }

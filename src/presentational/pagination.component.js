@@ -7,13 +7,13 @@ import DevTools from '../DevTools';
 
 
 const Pagination = props => (
-    <div className="container">
-        <button onClick={props.setCountriesPerPage.bind(6)}>6 per page</button>
-        <button onClick={props.setCountriesPerPage.bind(3)}>3 per page</button>
+    <div className="container">        
+        <button onClick={props.setCountriesPerPage.bind(null, 3)}>3 per page</button>
+        <button onClick={props.setCountriesPerPage.bind(null, 6)}>6 per page</button>
         <button className="buttons" onClick={props.handlePrevPage.bind(this)}>Prev</button>
         {props.pageNumbers.map((number) =>{
             return (                         
-                <li key={number} id={number} onClick={props.handleClick.bind(this)} className="listStyle">
+                <li key={number} id={number} onClick={props.handleClick.bind(this)} className={props.currentPage == number ? "listStyleActive" : "listStyle"}>
                         {number}
                 </li>            
             )
