@@ -5,6 +5,7 @@ export const GET_COUNTRY = 'GET_COUNTRY';
 export const DELETE_COUNTRY = 'DELETE_COUNTRY';
 export const SEARCH_COUNTRIES = 'SEARCH_COUNTRIES';
 export const SET_CONTINENT = 'SET_CONTINENT';
+export const HANDLE_CLICK_PAGE = 'HANDLE_CLICK_PAGE';
 
 // ACTIONS CREATORS
 
@@ -41,5 +42,12 @@ export function setContinent(name) {
         type: SET_CONTINENT,
         name
 
+    }
+}
+// Pagination
+export function handleClickPage(currentPage) {
+    return {
+        type: HANDLE_CLICK_PAGE,
+        currentPage
     }
 }
