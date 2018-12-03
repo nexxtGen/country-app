@@ -1,0 +1,21 @@
+.listStyle {
+    margin-top: 3px;
+    font-Size: 16px;
+    display: inline;
+    margin-right: 5px;  
+}
+
+.listStyle:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+}
+
+.buttons {
+    margin: 0px 5px;
+    padding: 2px;
+}
