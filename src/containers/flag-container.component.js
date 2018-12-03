@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CountryFlagList from '../presentational/flag-list.component';
 import Pagination from '../presentational/pagination.component';
-import { getCountries, searchCountries, deleteCountry, handleClickPage } from '../actions/actions-countries';
+import { getCountries, searchCountries, deleteCountry, handleClickPage, handleNextPage, handlePrevPage, setCountriesPerPage } from '../actions/actions-countries';
 
 class CountryFlagContainer extends Component {
     constructor(props) {
@@ -23,9 +23,22 @@ class CountryFlagContainer extends Component {
         this.props.dispatch(deleteCountry(id));
     }
     // Pagination
+    // choose page with countries
     handleClickPage(event) {
         this.props.dispatch(handleClickPage(event.target.id));
         console.log('event id', event.target.id)
+    }
+
+    handleNextPage() {
+        this.props.dispatch(handleNextPage());        
+    }
+
+    handlePrevPage() {
+        this.props.dispatch(handlePrevPage());        
+    }
+    // set number countries per page
+    setCountriesPerPage(countriesPerPage) {
+        this.props.dispatch(setCountriesPerPage(countriesPerPage))
     }
     render() {
         //Add pagination
@@ -46,7 +59,13 @@ class CountryFlagContainer extends Component {
                 <h5>Countries list pages number: {pageNumbers.length}</h5>
                 <h5>All countries in App: {this.props.countries.length}</h5>
                 <h5>Select Page</h5>
-                <Pagination pageNumbers={pageNumbers} handleClick={this.handleClickPage.bind(this)}/>
+                <Pagination 
+                    setCountriesPerPage={this.setCountriesPerPage.bind(this)}
+                    pageNumbers={pageNumbers} 
+                    handleClick={this.handleClickPage.bind(this)} 
+                    handleNextPage={this.handleNextPage.bind(this)} 
+                    handlePrevPage={this.handlePrevPage.bind(this)}
+                />
                 <div className="search text-center">
                     <input type="text" onChange={this.search.bind(this)}/>
                 </div>

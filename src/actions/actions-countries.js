@@ -6,6 +6,9 @@ export const DELETE_COUNTRY = 'DELETE_COUNTRY';
 export const SEARCH_COUNTRIES = 'SEARCH_COUNTRIES';
 export const SET_CONTINENT = 'SET_CONTINENT';
 export const HANDLE_CLICK_PAGE = 'HANDLE_CLICK_PAGE';
+export const HANDLE_NEXT_PAGE = 'HANDLE_NEXT_PAGE';
+export const HANDLE_PREV_PAGE = 'HANDLE_PREV_PAGE';
+export const SET_COUNTRIES_PER_PAGE = 'SET_COUNTRIES_PER_PAGE';
 
 // ACTIONS CREATORS
 
@@ -49,5 +52,26 @@ export function handleClickPage(currentPage) {
     return {
         type: HANDLE_CLICK_PAGE,
         currentPage
+    }
+}
+//pagination add next button.
+export function handleNextPage() {
+    return {
+        type: HANDLE_NEXT_PAGE  
+    }
+}
+// Prev button
+export function handlePrevPage() {
+    return {
+        type: HANDLE_PREV_PAGE        
+    }
+}
+//set number of pages
+// Prev button
+export function setCountriesPerPage(countriesPerPage) {
+    return {
+        type: SET_COUNTRIES_PER_PAGE,
+        countriesPerPage
+
     }
 }

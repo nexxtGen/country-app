@@ -8,7 +8,9 @@ import DevTools from '../DevTools';
 
 const Pagination = props => (
     <div className="container">
-        <button className="buttons">Prev</button>
+        <button onClick={props.setCountriesPerPage.bind(6)}>6 per page</button>
+        <button onClick={props.setCountriesPerPage.bind(3)}>3 per page</button>
+        <button className="buttons" onClick={props.handlePrevPage.bind(this)}>Prev</button>
         {props.pageNumbers.map((number) =>{
             return (                         
                 <li key={number} id={number} onClick={props.handleClick.bind(this)} className="listStyle">
@@ -16,7 +18,7 @@ const Pagination = props => (
                 </li>            
             )
         }) }
-        <button className="buttons">Next</button>
+        <button className="buttons" onClick={props.handleNextPage.bind(this)}>Next</button>
     </div>    
     
 );
