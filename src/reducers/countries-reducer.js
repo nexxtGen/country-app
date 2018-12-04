@@ -28,7 +28,7 @@ const countriesReducer = function (state = initialState, action) {
             return Object.assign({}, state, {selectedCountry});
             case SEARCH_COUNTRIES:
                 const foundCountries = state.countries.filter(country => country.name.toLowerCase().includes(action.searchText.toLowerCase()));
-                return Object.assign({}, state, {visibleCountries: foundCountries});
+                return Object.assign({}, state, {visibleCountries: foundCountries, currentPage: 1});
             case DELETE_COUNTRY:
                 const notDeletedCountries = state.countries.filter(country => country.id != action.id);
                 const notDeletedVisibleCountries = state.visibleCountries.filter(country => country.id != action.id);

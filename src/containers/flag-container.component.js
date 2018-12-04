@@ -4,41 +4,59 @@ import CountryFlagList from '../presentational/flag-list.component';
 import Pagination from '../presentational/pagination.component';
 import { getCountries, searchCountries, deleteCountry, handleClickPage, handleNextPage, handlePrevPage, setCountriesPerPage } from '../actions/actions-countries';
 
+//Dispatch actions to props
+const mapDispatchToProps = dispatch => ({    
+    getCountries: () => dispatch(getCountries()),
+    searchCountries: (event) => dispatch(searchCountries(event)),
+    deleteCountry: (id) => dispatch(deleteCountry(id)),
+    handleClickPage: (event) => dispatch(handleClickPage(event)),
+    handleNextPage: () => dispatch(handleNextPage()),
+    handlePrevPage: () => dispatch(handlePrevPage()),
+    setCountriesPerPage: (countriesPerPage) => dispatch(setCountriesPerPage(countriesPerPage)),
+
+  });
+
 class CountryFlagContainer extends Component {
     constructor(props) {
         super(props);
-        //this.handleClickPage = this.handleClickPage.bind(this);
+        //Binding methods
+        this.search = this.search.bind(this);
+        this.setCountriesPerPage = this.setCountriesPerPage.bind(this);
+        this.handleClickPage = this.handleClickPage.bind(this);
+        this.handleNextPage = this.handleNextPage.bind(this);
+        this.handlePrevPage = this.handlePrevPage.bind(this);
+        this.deleteCountry = this.deleteCountry.bind(this);
     }
 
     componentDidMount(){
-        this.props.dispatch(getCountries());
-        this.props.dispatch(searchCountries(''));
+        this.props.getCountries();
+        this.props.searchCountries('');
     }
 
     search(event) {
-        this.props.dispatch(searchCountries(event.target.value));
+        this.props.searchCountries(event.target.value);
     }
 
     deleteCountry(id) {
-        this.props.dispatch(deleteCountry(id));
+        this.props.deleteCountry(id);
     }
     // Pagination
-    // choose page with countries
+    // choose page with countries    
     handleClickPage(event) {
-        this.props.dispatch(handleClickPage(event.target.id));
+        this.props.handleClickPage(event.target.id);
         console.log('event id', event.target.id)
     }
-
+    
     handleNextPage() {
-        this.props.dispatch(handleNextPage());        
+        this.props.handleNextPage();        
     }
 
     handlePrevPage() {
-        this.props.dispatch(handlePrevPage());        
+        this.props.handlePrevPage();        
     }
     // set number countries per page
     setCountriesPerPage(countriesPerPage) {
-        this.props.dispatch(setCountriesPerPage(countriesPerPage))
+        this.props.setCountriesPerPage(countriesPerPage);
     }
     render() {
         //Add pagination
@@ -62,15 +80,15 @@ class CountryFlagContainer extends Component {
                 <Pagination 
                     setCountriesPerPage={this.setCountriesPerPage.bind(this)}
                     pageNumbers={pageNumbers} 
-                    handleClick={this.handleClickPage.bind(this)} 
-                    handleNextPage={this.handleNextPage.bind(this)} 
-                    handlePrevPage={this.handlePrevPage.bind(this)}
+                    handleClick={this.handleClickPage} 
+                    handleNextPage={this.handleNextPage} 
+                    handlePrevPage={this.handlePrevPage}
                     currentPage={this.props.currentPage}
                 />
                 <div className="search text-center">
-                    <input type="text" onChange={this.search.bind(this)}/>
+                    <input type="text" onChange={this.search}/>
                 </div>
-                <CountryFlagList countries={currentCountries} deleteCountry={this.deleteCountry.bind(this)}/>
+                <CountryFlagList countries={currentCountries} deleteCountry={this.deleteCountry}/>
             </div>
         )
     }
@@ -86,4 +104,4 @@ const mapStateToProps = function (store) {
     };
 };
 
-export default connect(mapStateToProps)(CountryFlagContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CountryFlagContainer);
