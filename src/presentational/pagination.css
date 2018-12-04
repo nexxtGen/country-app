@@ -1,0 +1,27 @@
+.listStyle {
+    margin-top: 4px;
+    font-Size: 15px;
+    display: inline;
+    margin-right: 5px;  
+}
+.listStyleActive {
+    margin-top: 0;
+    font-Size: 21px;
+    display: inline;
+    margin-right: 5px;  
+    color: blue;
+}
+.listStyle:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+}
+
+.buttons {
+    margin: 0px 5px;
+    padding: 2px;
+}
